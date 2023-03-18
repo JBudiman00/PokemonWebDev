@@ -1,0 +1,28 @@
+.card{
+    width: 200px;
+    box-sizing: border-box;
+    margin: 10px auto;
+    border: 3px solid #3B4CCA;
+    background-color: #FFDE00;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.selectButton{
+    background-color: #ff0000;
+    border: 3px solid #3B4CCA;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.selectButton:active{
+    background-color: #CC0000;
+    border: 3px solid #3B4CCA;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.header{
+    font-weight: bold;
+    font-size: 20px;
+}
