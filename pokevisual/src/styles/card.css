@@ -36,3 +36,9 @@
 .img{
     text-align: center;
 }
+
+.abilities{
+    height: 70px;
+    text-align: left;
+    margin-left: 27%;
+}

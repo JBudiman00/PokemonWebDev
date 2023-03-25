@@ -11,14 +11,19 @@
     min-height: 120px;
 }
 
+.availableBackground{
+    margin: auto;
+    border: 1px solid black;
+    background-color: hsla(0, 100%, 71%, 0.486);
+    border-radius: 20px;
+    width: 90%;
+}
+
 .availableCards{
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     width: 90%;
-    border: 1px solid black;
-    background-color: hsla(0, 100%, 71%, 0.486);
-    border-radius: 20px;
 }
 
 .topbar{
@@ -27,7 +32,26 @@
     overflow: hidden;
 }
 
+div.buttonParent{
+    text-align: center;
+}
+
+.load{
+    display: inline-block;
+    width: 20%;
+    margin: auto; 
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #ff0000;
+    text-align: center;
+    border-radius: 20px;
+}
+
 html, body{
     padding: 0;
     margin: 0;
+}
+
+.title{
+    text-align: center;
 }

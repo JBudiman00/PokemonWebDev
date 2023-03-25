@@ -8,12 +8,14 @@ function App() {
       <div className="topbar">
         <h1>Pokemon Selection</h1>
       </div>
+      <h1 className="title">Players Cards</h1>
       <div className="playerCards">
         <Team />
       </div>
-    <div className="availableCards">
-      <Info />
-    </div>
+      <h1 className="title">Available Cards</h1>
+      <div className="availableBackground">
+        <Info />
+      </div>
     
     </div>
   );

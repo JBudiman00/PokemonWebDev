@@ -39,10 +39,12 @@ export default function Card(props){
             <p className="header">{props.name}</p>
             <img src={props.url}></img>
             <p>Abilities</p>
-            {props.ability.map((item) => {
-                return <li key={item}>{item}</li>
-            })
-            }
+            <div className="abilities">
+                {props.ability.map((item) => {
+                    return <li key={item}>{item}</li>
+                    })
+                }
+            </div>
             <button className="selectButton" onClick={updateData}>Select</button>
         </div>
     )
