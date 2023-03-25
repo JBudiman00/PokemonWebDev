@@ -2,33 +2,55 @@ import React, { useState, useEffect } from 'react';
 import Card from './availablecards.jsx';
 
 export default function Info(){
-    const [pokemon, setPokemon] = useState()
+    const [pokemon, setPokemon] = useState([]);
+
+    const getAPIData = async () => {
+        const url = "https://pokeapi.co/api/v2/pokemon?limit=15&offset=0";
+        const response = await fetch(url);
+        const responseJSON = await response.json();
+
+
+        const pokemonData = [];
+        responseJSON.results.forEach((item) => {
+            pokemonData.push(item.url);
+        });
+
+        return pokemonData;
+    };
 
     const handleFetch = (response) => {
-        console.log(response.status);
         return response.json();
     }
 
-    const handleID = (response) => {
-        //const respPoke = response.results.map((item) => <li key={item.name}>{item.name}</li>);
-        const respPoke = response.results.map((item) => <Card key={item.name} name={item.name}/>);
-        setPokemon(respPoke);
-    }
-
-    const handleError = (error) => {
-        console.log(error);
-        setPokemon(<li>Network Error!</li>)
+    const handleResponse = (response) => {
+        const name = response.forms.map((item) => {return item.name});
+        const image = response.sprites.back_default;
+        const ability = response.abilities.map((item) => {return item.ability.name});
+        const cardInfo = <Card name={name} url={image} ability={ability}/>
+        setPokemon(pokemon => [...pokemon, cardInfo]);
     }
 
     useEffect(() => {
-        const url = "https://pokeapi.co/api/v2/pokemon";
-        fetch(url)
-        .then(handleFetch)
-        .then(handleID)
-        .catch(handleError)
+        setPokemon([]);
+
+        getAPIData()
+        .then(
+            response => {
+                response.forEach((item) => {
+                    fetch(item)
+                    .then(handleFetch)
+                    .then(handleResponse)
+                    .catch((err) => {
+                        console.log(err.message);
+                    });
+                })
+            }
+        );
     }, [])
 
     return (
-        <>{pokemon}</>
-    )
+        <>
+        {pokemon}
+        </>
+    );
 }

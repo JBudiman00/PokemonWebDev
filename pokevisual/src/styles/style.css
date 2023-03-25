@@ -2,11 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    margin-bottom: 50px;
+    margin-top: 2%;
+    margin-bottom: 2%;
     width: 90%;
     border: 1px solid black;
     background-color: hsla(0, 100%, 71%, 0.486);
     border-radius: 20px;
+    min-height: 120px;
 }
 
 .availableCards{
@@ -22,4 +24,10 @@
 .topbar{
     text-align: center;
     background-color: gray;
+    overflow: hidden;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
 }

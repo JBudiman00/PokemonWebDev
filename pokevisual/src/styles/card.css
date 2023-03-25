@@ -6,6 +6,8 @@
     background-color: #FFDE00;
     border-radius: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .selectButton{
@@ -16,13 +18,21 @@
 }
 
 .selectButton:active{
-    background-color: #CC0000;
+    background-color: #cc0000;
     border: 3px solid #3B4CCA;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
+.selectButton:hover{
+    background-color: rgb(255, 66, 66);
+}
+
 .header{
     font-weight: bold;
     font-size: 20px;
+}
+
+.img{
+    text-align: center;
 }

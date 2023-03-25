@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { database } from '../database.js';
-import { set, update, onValue, remove, ref } from 'firebase/database';
+import { remove, ref } from 'firebase/database';
 import '../styles/card.css';
 
 export default function teamCard(props){

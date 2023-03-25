@@ -1,4 +1,3 @@
-import Card from './components/availablecards.jsx';
 import Info from './components/pokemoninfo.jsx';
 import Team from './components/team.jsx';
 import './styles/style.css';

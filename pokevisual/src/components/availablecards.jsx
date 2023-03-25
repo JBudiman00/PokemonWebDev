@@ -37,6 +37,12 @@ export default function Card(props){
     return(
         <div className="card">
             <p className="header">{props.name}</p>
+            <img src={props.url}></img>
+            <p>Abilities</p>
+            {props.ability.map((item, index) => {
+                return <li key={index}>{item}</li>
+            })
+            }
             <button className="selectButton" onClick={updateData}>Select</button>
         </div>
     )
